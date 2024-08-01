@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+
+    font-family: "Red Hat Display", sans-serif;
+}
+
+:root {
+    /* Colors */
+    --cyan-600: #4d96a9;
+    --cyan-300: #8fe3f9;
+    --purple-600: #855fb1;
+    --purple-300: #d9b8ff;
+    --slate-900: #28283d;
+    --slate-600: #87879d;
+    --slate-300: #d1d1df;
+    --white: #fafafa;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER STYLES */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+
+    width: 100%;
+
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: auto 27% auto;
+    grid-template-rows: 1fr;
+    width: 100%;
+}
+
+.hero__left-image {
+    grid-column: 1;
+}
+
+.hero__text-and-buttons {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__text-and-buttons h1 {
+    font-size: calc(64 / 16 * 1rem);
+    line-height: 1.1;
+    color: var(--slate-900);
+
+    margin-bottom: 32px;
+}
+
+.hero__text-and-buttons p {
+    text-align: center;
+
+    margin-bottom: 32px;
+
+    font-size: calc(18 / 16 * 1rem);
+    line-height: 1.5;
+    color: var(--slate-600);
+}
+
+.hero__text-and-buttons button {
+    padding: 16px 40px;
+    border: none;
+
+    color: var(--white);
+    font-weight: 600;
+    background-color: var(--cyan-600);
+    border-radius: 30px;
+}
+
+.hero__text-and-buttons button span {
+    color: var(--cyan-300);
+}
+
+.hero__text-and-buttons button:nth-child(2) {
+    background-color: var(--purple-600);
+}
+
+.hero__right-image {
+    grid-column: 3;
+    justify-self: end;
+}
+
+/* MAIN STYLES */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.separator {
+    margin: 0 auto;
+    position: relative;
+
+    margin-bottom: 64px;
+}
+
+.separator__line {
+    background-color: var(--slate-300);
+    width: 1px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.separator__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--slate-300);
+
+    color: var(--slate-600);
+    font-weight: 900;
+    border-radius: 100%;
+}
+
+.image-banner {
+    display: flex;
+    column-gap: 3%;
+    justify-content: center;
+}
+
+.image-banner img {
+    width: 256px;
+
+    border-radius: 7px;
+}
+
+.smarter-meetings-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 64px;
+
+    text-align: center;
+    width: 50%;
+}
+.smarter-meetings-section p:first-child {
+    color: var(--cyan-600);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.smarter-meetings-section h2 {
+    margin-top: 12px;
+
+    color: var(--slate-900);
+    font-size: calc(40 / 16 * 1rem);
+}
+
+.smarter-meetings-section p {
+    color: var(--slate-600);
+    font-size: calc(18 / 16 * 1rem);
+
+    margin-top: 32px;
+    margin-bottom: 72px;
+}
+
+.separator:last-child {
+    margin-bottom: -25px;
+}
+
+.separator__number:last-child {
+    background-color: var(--white);
+}
+
+/* FOOTER STYLES */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    height: 308px;
+
+    /* A solid, transparent colour cannot appear first in the order. Linear gradient is a work around. */
+    background: linear-gradient(#4d97a9d7, #4d96a9d7),
+        url(/assets/desktop/image-footer.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: var(--white);
+}
+
+footer h2 {
+    font-size: calc(40 / 16 * 1rem);
+
+    width: 30%;
+}
+
+footer p {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: 1.5;
+
+    width: 25%;
+}
+
+footer button {
+    padding: 16px 40px;
+    border: none;
+
+    color: var(--white);
+    font-weight: 600;
+    background-color: var(--purple-600);
+    border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero__left-image {
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: span 2;
+    }
+
+    .hero__right-image {
+        grid-row: 1;
+        grid-column-start: 2;
+        grid-column-end: span 2;
+    }
+    .hero__text-and-buttons {
+        grid-row: 2;
+    }
+}
